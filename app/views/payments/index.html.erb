@@ -1,3 +1,11 @@
 <h1>Payments#index</h1>
-<p>Find me in app/views/payments/index.html.erb</p>
+<p>Kraken Bitcoin value in Euro is: <%= flash[:kraken]%></p>
 
+<%= form_tag("/buy", method: "get") do%>
+	<%= number_field_tag("value")%>
+	<%= submit_tag("Euro to spend")%>
+<%end%>
+
+<p>You will get <%= flash[:btc_to_get]%> bitcoins</p>
+
+<%= console%>
